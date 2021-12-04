@@ -7,6 +7,8 @@
 #include <fstream>
 #include <ctime>
 
+// Testing Github right now woooo why is this so difficult and annoying to learn
+
 // Functions
 int main(); // main function
 void startGame(); // opens file and starts game if user selects to  play (calls menu)
