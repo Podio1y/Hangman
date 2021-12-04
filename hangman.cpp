@@ -340,9 +340,14 @@ bool isPresent(char letter, char guessesOrWord[]){ // guessesOrWord array can ei
         // If the letter is found in the array, return true
         //std::cout << "word CHAR: " << guessesOrWord[i] << "," << std::endl; //debugging
         //std::cout << "Letter CHAR: " << letter << std::endl;
+
+        // Had to add this first if because for some reason guessedLetters[] starts having random chars 
+        // appearing in it towards the end, so i need to immediately break when the word is done to avoid mistakes.
+        // Currently trying to debug why.
         if (guessesOrWord[i] == NULL){
             return false;
         }
+
         if (letter == guessesOrWord[i]){
             return true;
         }
