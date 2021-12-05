@@ -61,7 +61,8 @@ void startGame(){
 // Purpose: Check if the password is correct or not
 int accessGranted(char password[]){
     int count = 0;
-    char storedPass [8] = "test";
+    int size = 5; // will be made to auto adjust depending on the password
+    char storedPass [size] = "test";
 
 
     for (int i = 0 ; i < 8 ; i++){
@@ -74,8 +75,7 @@ int accessGranted(char password[]){
         return 2;
     }
 
-    for (int i = 0 ; i < 8 ; i++){
-
+    for (int i = 0 ; i < size ; i++){
         if (password[i] != storedPass[i]){
             return 0;
         }
@@ -127,7 +127,7 @@ void settingsAccess(){
                 // printf("password: %8s", password);
             }
             if (accessGranted(password) != 0){
-                    break;
+                break;
             }
         } 
     }
@@ -257,7 +257,7 @@ void play(){
             }
 
             // Stopping the program to let the user see the correct or incorrect message
-            //pauseProgram(); 
+            pauseProgram(); 
             system("cls");
 
             // If the user guessed all the letters in the word
@@ -335,7 +335,7 @@ bool isPresent(char letter, char guessesOrWord[]){ // guessesOrWord array can ei
     //std::cout << "word: " << guessesOrWord; //debugging
     //std::cout << "Letter: " << letter << std::endl; //debugging
     // Traverse through the guessesOrWord array
-    for (int i = 0 ; i < 25 ; i++){
+    for (int i = 0 ; i < 26 ; i++){
 
         // If the letter is found in the array, return true
         //std::cout << "word CHAR: " << guessesOrWord[i] << "," << std::endl; //debugging
