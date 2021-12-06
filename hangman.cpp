@@ -143,7 +143,7 @@ void play(){
     int lives = 20;
     int length = 0; // The length of the current word being guessed
     char guess; // The users input
-    char guessedLetters[26] = {0}; // Array which stores all the guessed letters
+    char guessedLetters[26]; // Array which stores all the guessed letters
 
     
     while (lives != 0){
@@ -205,11 +205,13 @@ void play(){
             }
 
             // Printing out what the player has already guessed and the lives
+            // std::cout << "guessed test: " << guessedLetters << std::endl;
+            // std::cout << guessedLetters << std::endl;
             std::cout << "\nGuessed: ";
             for (int i = 0 ; i < 26 ; i++){
 
                 // If there is a non default entry in guessedletters, it must be a letter which was guessed
-                if (guessedLetters[i] != 0){    
+                if (guessedLetters[i] <= 97 && guessedLetters[i] >= 65){    
                     
                     // If its the first letter that was guessed, dont add a coma, otherwise add one to keep a clean look
                     if (i == 0){
